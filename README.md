@@ -36,4 +36,4 @@ Current version: 1.0
 
 This application is presented as is, with no guarantees of quality, usability, or appropriateness for a particular use case. It's just a practice project that I figured might have some features that other people may find useful. 
 
-If you have any suggestions for improvements/bugfixes, please let me know! 
+If you have any suggestions for improvements/bugfixes, feel free to clone the repository and make a pull request! 
