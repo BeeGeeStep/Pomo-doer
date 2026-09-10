@@ -1,0 +1,219 @@
+6/9/2026
+	-Final checks completed/UI undated
+	-Changed version number to 1.0! 
+
+4/9/2026
+	-added file import
+	-changed version number to 0.9
+  
+11/8/2026
+	- Multiple version changes
+		- 0.7 > 0.8
+		- implemented local storage to allow persistent task lists in the event of browser closure
+		- implemented drag-and-drop task reordering, with main tasks allowing to be switched with main tasks and subtasks with subtasks
+		- updated .js file readme to reflect next steps/QOL queue
+
+28/06/2026
+    -Added project as new Github repository
+    -Reinitialized project as v0.7
+
+18/06/2026
+    -Implemented logic to set progress-bar-inner to percentage of remaining time
+    -Implemented styling to set pomodoro start/pause buttons and skip button as inline elements
+    -Pomodoro timer aspects complete! 
+
+15/06/2026
+	-Updated progress bar in HTML/CSS files - now uses nested div tags, maximum compatibility/ease of use. 
+	-Next step 
+        -implement logic to set progress-bar-inner to width: (timeElapsed/totalTime * 100);
+        -implement styling to set pomodoro start and skip buttons to flexbox / direction: horizontal
+
+10/06/2026
+	-Updated ids in HTML to follow first-middle-last name formatting, for best practice
+	-Removed custom formatting of porgress-bar range input
+		-get it working first, then make it pretty after
+
+06/06/2026
+	-Updated progress bar from div to range input
+	-removed range default styling, ready for new styling/progress bar displaying
+	-Needed: figure out how to change colour of the passed time part of the slider/everything from the left of the slider only
+        -accent-color property!
+
+03/06/2026
+    -Project refresh carried out - updated READ ME.txt checklist to better reflect current state of project
+    -Added progress bar placeholder div to Pomodoro timer section
+
+1/10/2025
+	-Fixed tiny bug where workOver music wouldn't play after completing a work stretch
+	-Removed waffle in index page, just has theme selection now
+	-Added help button fixed to top-right of page w/ eventlistener to display info on how to use the app
+
+30/09/25
+	-Created .pngs for Pomo, Dark, and Sketch background/resized to full 4K resolution
+	-Coded png selection into themes selection function
+	-Customisable themes done!
+
+28/09/25
+	-Incorporated nested array for different themes properties. 
+	-Coded for-loop to load all themes entries as selectable divs on the main page
+	-Coded function to alter properties of CSS file to change theme colors to selected one
+		-Took me entirely too long to google and realise you can just update the CSS lines that the other objects feed off. I WAS CHANGING EVERYTHING MANUALLY LIKE A PLEB. 
+	-Started new theme for pen/paper aesthetic
+	-Redid theme variables to use a wallpaper image for backgrounds
+		-Need to make background image tiles for older single-shade themes to use as background images
+		-Need to edit existing sketch paper image to better fit existing screen dimensions
+
+21/9/25
+	Made new file for bug tracking
+	Edited comments of js file for overview/planned features
+
+	Doer
+	- Added overflow styling to the text-container of all task divs to prevent overflowing task descriptions
+
+	Pomo
+	- Added in a skip button
+		- Clicking the skip button will auto-forward the timer to the top of the next sprint, accommodating broken up or interrupted sprints
+
+18/9/25
+	Doer
+	- removed subtask/maintask auto checking logic from div construction functions 
+	- Added subtask/maintask auto checking logic to toggle functions
+	- New auto checking tested, working! 
+
+	- I realise this is probably extremely vain, but I like recognising that I'm getting faster and simpler with how I can fix new issues when they pop up. A month or two ago? I'd have been stuck on this for days, maybe. 
+	- It's growth, and I'm glad for it. 
+
+17/9/25 - v0.11
+	Doer
+	- Added logic to auto-tick main task if all subtasks are ticked
+	- Added then removed logic to tick all subtasks if main task ticked
+		- removed because bug discovered where if you tick everything with the main task, you can't untick anything. 
+		- Likely because it should be handled at the event listener level, rather than the div construction level, so it's overwriting itself
+
+16/9/25 - v0.11
+	Doer
+	- Added code to create subtask
+	- tied event handler to button for creating subtasks
+	- Button tested - can make subtasks!
+	- subtask div construction function coded from main div construction function
+		- Issue - text is there, no container divs or controls are being added
+		- Text is being added straight into the container div, without text container
+		- Issue found, div was being overwritten at the very end of construction with a piece of old code
+	- Added delete code as subroutine of editTask() 
+		- In effect, removing the task's description will remove the task, as you can't have a task without a description
+	- Base database functions met baybeeeee
+
+15/9/25 - v0.11
+	Doer
+	- added event listener to '?' buttons in task divs
+	- coded updateTask() function to update the text within a task
+	- Function tested, works!
+	- changed '?' button to universal options character, for pizzazz
+
+	- Next
+		- code delete task function
+		- add code to event handler to handle user choice for update or delete
+
+14/9/25 - v0.11
+	Doer
+	- created function to construct a main task div
+	- New div tested, works perfectly
+	- New divs success accredited to container divs. My eternal shame for not having had used these previously. Forgive me, sensei. 
+	- New div created with checkbox for marking task as complete, and two buttons
+		- '+' button for adding a subtask
+		- '?' button for options (edit task or delete task)
+		- Neither buttons are functional
+	- Need to add custom styling to check button
+
+10/9/25 - v0.11
+	Doer
+	- Implemented new Maintask and Subtask child classes of Task parent class. 
+	- Maintask objects have an array to hold Subtasks
+	- Subtask objects have a field to reference their parent's ID in the tasks array
+	- Altered current code to reflect class changes
+	- Added '+' button to new divs in preparation for adding subtask functions
+	- Altered update() related functions to use different functions to create main and subtasks
+	- At this point, need to rebuild divs from scratch to put in all buttons/functionality
+
+5/9/25 - v0.11
+	Doer
+	- Added ability to toggle tasks as complete and incomplete
+	- Minimum functionality for Doer achieved! Pomo-Doer MVP met! 
+
+	Pomo
+	- Edited Sprint span code to display stretches as 1-4, rather than 1-8 including breaktimes
+	- Added finished break and finished work stretches music to play on those events
+
+4/9/25 - v0.10
+	Doer
+	- Added clickable function to individual task divs
+	- Function currently non-functional - need to find out how to invoke array elements from divs
+		- Use the div's id as an index for which element of the array to alter? 
+
+3/9/25 - v0.10
+	General
+	- Played around with styling more, because I am incorrigible
+
+	Pomo
+	- Edited display to show number of remaining pomos left in rotation
+
+	To Do List
+	- Removed test divs
+	- Coded createTask() function
+	- Tested createTask function in console, successfully adds Task objects to array
+	- Strange quirk discovered in updateTasks function/declarations - a const variable is set as 'listDiv', that gets "list" element from HTML. Although I have two lines using it in a later function, it marks the initial variable as unused. 
+		- Even stranger, setting variable as 'list' instead of 'listDiv' makes the program work fine - including when I remove the getElementById declaraction altogether! 
+		- After some tests, I've discovered that it ONLY works if the variable is named 'list'. Words cannot describe my confusion. 
+		- I figured it out - when grabbing an element as part of the onload, you don't actually need a variable - it chains it as a direct link to the HTML id, so you can just use that one id throughout all your documents! 
+		- I think this means that I need to be careful with WHERE I get my elements
+	- created start of updateTasks function
+		- Current functionality - removes all previous tasks in preparation for filling in new tasks
+
+	- Session #2 - figured out root of quirk above was due to variables declared inside the window.onload function, rather than globally. Pre-declaration at global level fixed all bugs. Good soup.
+
+31/8/25 - v0.10
+	Pomo
+	- Coded individual pomo tracking into app
+	- Added display for current pomo
+	- Timer now considered 100% functional for use
+
+	To Do List
+	- First version of Task class created
+	- Text input and button created
+	- test divs created for basic useability created
+	- Not minimal amount of CSS styling added, because of who I am as a person
+	- button removed because... why need it?
+
+
+28/8/25 - v0.10
+	- Coded resetTimer() logic
+	- MVP of pomodoro achieved - a basic timer that can be run down, paused, and reset after time has elapsed (currently only set to 25 minute work stretch, stretch loading is hardcoded)
+	- next steps for timer - program in individual pomo stretches tracking/switching
+	
+	- decision time - work on stretches for pomodoro timer, or start on working on MVP for To Do list? 
+	- In case it's the To Do list next, list item parent div, id "list" has been coded in index.html
+	- Decide on structure for new tasks - array, set, XML? Custom class for each task, definitely
+
+---
+
+27/8/25 - v0.00
+ 	- broke timer temporarily while attempting to fix spamming issue. 
+ 	- Have commented out anti-spam code during MVP development, note to re-attack after main functions finished.
+	- Anti-spam code prototype pasted below: 
+                
+    // prevent time from being run down artificially when the button is pressed more than once within the last second
+    lastClickTime = Date.now();
+    currentClickTime = Date.now() - lastClickTime;
+    if (Math.floor(currentClickTime / 1000) < 1) {
+        console.log('click spammed, ignoring');
+        return;
+    }
+ 
+---
+
+ 26/8/25 - v0.00
+ 	- Session check-ins started
+ 	- HTML/CSS page created/styled
+ 	- 'work' 'break', and 'big break' sprints defined
+ 	- Countdown timer logic coded
+ 	- Start button added, with event handler for starting and pausing the timer

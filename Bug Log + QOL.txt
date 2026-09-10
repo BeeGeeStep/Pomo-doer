@@ -1,0 +1,51 @@
+Pomo-Doer! Bug Log
+
+QOL: 
+
+- 'Y4K' : 
+    - the current backgrounds for themes are 4K png files, which are quite storage expensive for no reason
+        - solution - re-factor the 4K pngs as simple, small square backgrounds, and set the background style to tiled. 
+        - will save a lot of disc space/loading time
+
+- 'Adoption Protocol' : 
+    - For task reordering, current behaviour is to swap main tasks when dragged over, and the same for subtasks. 
+    - If tasks of differing types are dragged over each other (e.g. main task dragged over a subtask, or vice versa), no swap takes place. 
+    - Tweak the logic to allow subtasks to be dragged over a maintask
+        - specific behavious desired - to drag a subtask over a main task, to remove that subtask from it's current parent task and make the dragged-over task its new parent
+
+CURRENT ISSUES: 
+
+- 'Long Line Bug' : 
+    - Checking a task will put a line through all the text in the + and options buttons, as opposed to just the text. 
+        - Find where to put the classlist for checked
+        - Could tie it to a class name/id for better selection? 
+
+- 'Spam Bug' : 
+    - When pausing/unpausing the timer, the button can be spammed to rapidly pass the time
+        - Temporarily disable the button for a second so the user can't spam it? 
+            - Disable on successful click action, re-enable at top of function call (which would run after setTimeout call?)
+        - Subroutine to prevent the time from elapsing if it's been less than a second since it was pressed last? 
+            - if timeSinceLastButtonPress > 1000ms ? runTimer(); : doNothing(); 
+            - flowchart - where do we put the anti-spamming logic?
+
+        - just disabling the button for a second would be easier - but not only is this harder, but it will also take even longer to implement!
+
+- 'Parent Trap Bug' : Resolved
+    - Clicking all the subtasks of a task will change that parent task to finished - good. 
+    - Clicking the main task changing all the subtasks to finished - also good.
+    - The main task being unable to be clicked out because it's child classes are all complete - not good. 
+        - Might be able to fix by adding logic to un-finish all child tasks if they're all complete, but the parent isn't?
+            - Only issue, that might undo the logic of setting the main task to complete when the children are
+            - Maybe change it at the event handler for clicking the checkbox, rather than the div constructors? 
+ 
+ - 'Text Select Bug' : Resolved
+      - When toggling a task, occasionally the text in the div will be selected if clicking too fast
+        - Add a styler that removes the ability to select the actual text inside a task div
+
+- 'Overflowing Task Bug' : Resolved
+    - When entering a task of one unbroken string of characters, the overflow will stretch outside of the div and spill into the rest of the document
+        - A overflow handler in the CSS styling for divs will handle this
+
+- 'Too Many Rounds Bug' : Resolved
+    - The pomodoro shows a progress counter for the total number of stretches in the rotation, not just work stretches
+        - update update() with logic to check which range of the stretches array is the current one, and set max pomos to 4 (one per work sprint)

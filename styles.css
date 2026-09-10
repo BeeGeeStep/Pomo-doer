@@ -1,0 +1,292 @@
+* {
+   box-sizing: border-box;
+   margin: 0px;
+   padding: 0px;
+}
+
+@font-face {
+   font-family: LexieReadable;
+   src: url(LexieReadable-Regular.ttf);
+}
+
+body {
+   /* theme */
+   --pomoWallpaper: url(./Dark.png);
+   --pomoBackground: #242424;
+   --pomoColor: #f1ff87;
+   --pomoHighlight: #d2d201;
+
+   text-align: center;
+   /* background-image: var(--pomoWallpaper); */
+   background-image: var(--pomoWallpaper);
+   background-repeat: no-repeat;
+   background-size: cover;
+   color: var(--pomoColor);
+   font-family: LexieReadable, OpenDyslexic, sans-serif;
+   font-size: 22px;
+   font-weight: bolder;
+}
+
+#help {
+   /* Positioning */
+   position: absolute;
+   top: 40px;
+   right: 40px;
+
+   font: inherit;
+   height: 50px;
+   width: 50px;
+   border: 5px solid var(--pomoHighlight);
+   border-radius: 50%;
+   padding: 5px;
+   background-color: var(--pomoColor);
+   color: var(--pomoBackground);
+}
+
+#help:hover {
+   cursor: pointer;
+}
+
+#themes {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 10px;
+}
+
+#themes div {
+   border: 5px solid var(--pomoColor);
+   margin-right: 10px;
+   padding: 5px;
+   border-radius: 10px;
+   cursor: pointer;
+}
+
+h1 {
+   margin-top: 30px;
+   font-size: 48px;
+   margin-bottom: 20px;
+}
+
+h1:after {
+   content: ' ';
+   border-bottom: 5px solid var(--pomoColor);
+   display: block;
+   width: 80%;
+   border-radius: 5px;
+   margin: 0 auto;
+   margin-top: 20px;
+}
+
+#clear-btn {
+   border: 5px solid var(--pomoHighlight);
+   border-radius: 10px;
+   font-family: LexieReadable, OpenDyslexic, sans-serif;
+   font-size: 22px;
+   font-weight: bolder;
+   background-color: var(--pomoColor);
+   color: var(--pomoBackground);
+   padding: 5px;
+   margin-bottom: 10px;
+}
+
+#clear-btn:hover {
+   cursor: pointer;
+}
+
+.io-btn {
+   border: 5px solid var(--pomoHighlight);
+   border-radius: 10px;
+   color: var(--pomoColor);
+   font-family: LexieReadable, OpenDyslexic, sans-serif;
+   font-size: 22px;
+   font-weight: bolder;
+   background-color: var(--pomoBackground);
+   padding: 5px;
+   margin-bottom: 10px;
+}
+
+.io-btn:hover {
+   cursor: pointer;
+}
+
+/* DOER STYLES */
+
+#to-do-list-box {
+   /* Likely 70% width */
+   width: 50%;
+   display: inline-block;
+   vertical-align: top;
+   padding: 20px;
+   border: 5px solid var(--pomoColor);
+   border-radius: 20px;
+   margin-right: 30px;
+}
+
+#to-do-list-box #task-input {
+   font: inherit;
+   padding: 5px;
+   width: 60%;
+   border-radius: 10px;
+   text-align: left;
+   padding-left: 15px;
+   margin-bottom: 12px;
+   width: 90%;
+   border: 0;
+}
+
+#to-do-list-box #list .task-container {
+   margin-bottom: 5px;
+}
+
+#to-do-list-box #list div {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font: inherit;
+   padding-left: 5px;
+   padding-right: 5px;
+   width: 90%; 
+   background-color: var(--pomoColor);
+   color: var(--pomoBackground);
+   border: 3px solid var(--pomoHighlight);
+   border-radius: 10px;
+   margin: 0 auto;
+}
+
+#to-do-list-box #list div .square-container {
+   height: 30px;
+   width: 30px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: 0;
+   background-color: rgba(0,0,0,0);
+   /* border: 1px solid red; */
+}
+
+#to-do-list-box #list div .text-container {
+   display: flex;
+   justify-content: left;
+   align-items: center;
+   border: 0;
+   overflow: auto;
+   background-color: rgba(0,0,0,0);
+   /* user-select: none; */
+   /* border: 1px solid red; */
+}
+
+#to-do-list-box #list div .square-container button {
+   font: inherit;
+   font-size: 20px;
+   box-sizing: content-box;
+   line-height: 0px;
+   min-height: 20px;
+   min-width: 20px;
+   padding: 0px;
+}
+
+#to-do-list-box #list div .square-container input[type="checkbox"] {
+   font: inherit;
+   font-size: 20px;
+   min-height: 20px;
+   min-width: 20px;
+   color: rgba(0,0,0,0);
+}
+
+#to-do-list-box button:hover {
+   cursor: pointer;
+}
+
+#to-do-list-box input[type="checkbox"]:hover {
+   cursor: pointer;
+}
+
+.checked {
+   /* background-color: #8c9297; */
+   text-decoration: line-through;
+   text-decoration-thickness: 3px;
+}
+
+.subtask {
+   max-width: 80%;
+   /* justify-items: right; */
+}
+
+.subtaskBtn {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   font: inherit;
+   font-size: 22px;
+   font-weight: bold;
+   padding: 5px;
+   margin-left: auto;
+}
+
+/* POMO STYLES */
+
+#timer-box {
+   /* Likely 30% width */
+   display: inline-flex;
+   flex-direction: column;
+   align-items: center;
+   width: 34%;
+   padding: 20px;
+   border: 5px solid var(--pomoColor);
+   border-radius: 20px;
+}
+
+#timer-box button {
+   margin-top: 10px;
+   padding: 10px;
+   width: 70%;
+   font: inherit;
+   background-color: var(--pomoColor);
+   border-radius: 10px;
+   color: var(--pomoBackground);
+   border: 0;
+   border-bottom: 5px solid var(--pomoHighlight); /* Try use a ::after element to preserve original button dimensions? */
+}
+
+#timer-box #skip {
+   width: 50px;
+   margin-left: 20px;
+}
+
+#timer-box button:hover {
+   cursor: pointer;
+}
+
+#timer-box p {
+   margin-bottom: 5px;
+}
+
+#timer-buttons {
+   display: inline;
+   direction: row;
+   width: 90%;
+}
+
+#progress-bar {
+   position: relative;
+   margin-bottom: 10px;
+   margin-top: 10px;
+   width: 80%;
+   height: 15px;
+   border: 5px solid var(--pomoColor);
+   border-radius: 15px;
+   background-color: var(--pomoHighlight);
+}
+
+#progress-bar-inner {
+   position: absolute;
+   top: 0;
+   right: 0;
+   height: 100%;
+   width: 33%;
+   background-color: var(--pomoBackground);
+}
+
+/* Timer aesthetic - the button has a border-bottom element that changes height on click events, to simulate a button being slightly depressed when clicked in, up to full height when clicked out, and depressed fully when actively clicked */

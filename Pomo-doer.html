@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="./styles.css">
+   <script src="./pomo-doer.js"></script>
+   <title>Pomo-Doer!</title>
+</head>
+<body>
+   <h1>Pomo-Doer!</h1>
+   <div id="help">?</div>
+   <p>Select a theme below: </p>
+   <div id="themes"></div>
+   <br>
+   <div id="to-do-list-box">
+      <input id="import-btn" type="file" multiple="false" accept=".json" class="io-btn" value="Import List">
+      <input id="export-btn" type="button" class="io-btn" value="Export List">
+      <input 
+            id="task-input" 
+            type="text" 
+            placeholder="Insert new task here!">
+      </input>
+      <input id="clear-btn" type="button" value="Clear All Tasks" hidden=true>
+      <div id="list">
+      </div>
+   </div> 
+   <div id="timer-box">
+      <p>Sprint <span id="sprint"></span></p>
+      <p>Time left: <span id="timer"></span></p>
+      <div id="progress-bar">
+         <div id="progress-bar-inner"></div>
+      </div>
+      <div id="timer-buttons">
+         <button id="startBtn">Start timer!</button> <button id="skip">&raquo;</button>
+      </div>
+   </div>
+</body>
+</html>
