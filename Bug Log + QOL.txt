@@ -13,6 +13,10 @@ QOL:
     - Tweak the logic to allow subtasks to be dragged over a maintask
         - specific behavious desired - to drag a subtask over a main task, to remove that subtask from it's current parent task and make the dragged-over task its new parent
 
+- 'Timesplitter' : 
+    - Current Pomodoro timer options are only 25/5 format
+    - In future, provide more options for different Pomodoro formats, like 50/10 and so on
+
 CURRENT ISSUES: 
 
 - 'Long Line Bug' : 
