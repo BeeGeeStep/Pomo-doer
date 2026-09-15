@@ -28,7 +28,7 @@ Plus some bonus features, like:
 
 ## How to use
 
-Download the file to your local desktop, and open the 'Pomo-doer.html' file in your browser of choice. 
+Download the zip file to your local desktop, extract it, and open the 'Pomo-doer.html' file in your browser of choice. 
 
 ## Info
 
