@@ -11,11 +11,16 @@ QOL:
     - For task reordering, current behaviour is to swap main tasks when dragged over, and the same for subtasks. 
     - If tasks of differing types are dragged over each other (e.g. main task dragged over a subtask, or vice versa), no swap takes place. 
     - Tweak the logic to allow subtasks to be dragged over a maintask
-        - specific behavious desired - to drag a subtask over a main task, to remove that subtask from it's current parent task and make the dragged-over task its new parent
+        - specific behaviour desired - to drag a subtask over a main task, to remove that subtask from it's current parent task and make the dragged-over task its new parent
 
 - 'Timesplitter' : 
     - Current Pomodoro timer options are only 25/5 format
     - In future, provide more options for different Pomodoro formats, like 50/10 and so on
+
+- 'No Tailgating' : 
+    - Currently when loading an external JSON file for list import, the function imports the entire array as the new tasks array
+    - This is risky because there is the chance that even though the function checks for the correct array parameters, there maybe be other fields in the new array that may allow loading of malicious data
+        - Solution - adjust the loading function to explicitly take the wanted fields from the new array, and ignore any extraneous information
 
 CURRENT ISSUES: 
 
